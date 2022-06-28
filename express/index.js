@@ -1,4 +1,4 @@
-const express = require("express") // Impostando o express
+const express = require("express") // Importando o express
 
 const app = express() // Iniciando o express
 
@@ -10,7 +10,8 @@ app.get("/", function(req, res){
 });
 
 app.get("/blog", function(requisicao, resposta){
-    resposta.send("BEM VINDO AO MEU BLOG")
+    nome = requisicao.query["nome"]
+    resposta.send("BEM VINDO AO MEU BLOG - "+ nome)
 });
 
 app.get("/canal/youtube", function(requisicao, resposta){
@@ -18,11 +19,15 @@ app.get("/canal/youtube", function(requisicao, resposta){
 });
 
 //Passar parametros pela URL:
-app.get("/nome/:nome", function(req, res){
+app.get("/nome/:nome?", function(req, res){
      //req = São os dados enviados pelo usuário
     //res = Resposta que vai ser enviada para o usuário
     var nome = req.params.nome
-    res.send(`Seu nome é: ${nome}`)
+    if (nome == undefined){
+        res.send(`Você é um anonymus`)
+    }else{
+        res.send(`Seu nome é: ${nome}`)
+    }
 });
 
 //Inicia o servidor
