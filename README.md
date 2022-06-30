@@ -197,3 +197,7 @@ Comando para atualizar algum dado da tabela. Neste comando também temos que sem
 UPDATE usuarios SET nome = "Cardoso" WHERE nome = "Edilson Junior";
 ```
 
+# Plataforma de Perguntas e respostas
+## Criado um novo projeto e tudo será documentado nele
+https://github.com/junior9068/perguntas-e-respostas
+# 
